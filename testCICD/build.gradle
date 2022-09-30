@@ -1,0 +1,49 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.3.40'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath "io.realm:realm-gradle-plugin:4.1.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.5'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.1'
+        classpath 'com.google.firebase:firebase-appdistribution-gradle:2.1.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.3.0"
+    }
+}
+
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.0.0.RC6-4"
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // Lib photo view
+        maven { url "https://jitpack.io" }
+        maven {
+            url "https://repo.famishare.jp/repository/famishare-repo"
+            credentials {
+                if (project.hasProperty("mvnDrJoyUser")) {
+                    username = project.getProperty("mvnDrJoyUser")
+                }
+                if (project.hasProperty("mvnDrJoyPassword")) {
+                    password = project.getProperty("mvnDrJoyPassword")
+                }
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
