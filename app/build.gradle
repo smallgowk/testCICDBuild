@@ -199,7 +199,7 @@ dependencies {
     implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
     implementation 'com.jakewharton:disklrucache:2.0.2'
     //tok box
-    implementation 'com.opentok.android:opentok-android-sdk:2.22.0'
+    implementation 'com.opentok.android:opentok-android-sdk:2.19.0'
     // Badge support library. Licensed under the Apache License, Version 2.0
     // For information please check https://github.com/leolin310148/ShortcutBadger
     implementation "me.leolin:ShortcutBadger:1.1.22@aar"
