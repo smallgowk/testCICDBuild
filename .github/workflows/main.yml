@@ -32,7 +32,7 @@ jobs:
       #     Build Jackfruit
       #      - name: Jackfruit Run Tests
       #        if: github.ref == 'refs/heads/dev-jackfruit'
-      #        run: ./gradlew -w clean testJackfruitReleaseUnitTest
+      #        run: ./gradlew -w clean testJackfruitReleaseUnitTest 
       - name: Build release
         run:
           ./gradlew -w clean assembleRelease -PmvnDrJoyUser=${{ secrets.MVN_DRJOY_USER }} -PmvnDrJoyPassword=${{ secrets.MVN_DRJOY_PASSWORD }}
